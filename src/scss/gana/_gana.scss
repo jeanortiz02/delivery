@@ -1,0 +1,51 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.gana {
+
+    background-color: v.$blanco;
+    padding: v.$separacion 0;
+
+    &__heading {
+        text-align: center;
+        color: v.$secundario;
+        font-weight: 700;
+    }
+
+    @include m.tablet {
+        &__grid {
+            @include m.grid (2, v.$separacion);
+            align-items: center;
+        }
+
+    }
+
+
+    &__contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    &__imagen {
+        width: 100%;
+    }
+
+    &__texto {
+        line-height: 1.5;
+        color: v.$secundario;
+        font-size: 1.9rem;
+    }
+
+    &__enlace {
+        @include m.boton (v.$primario, v.$blanco);
+
+
+        @include m.tablet {
+            width: auto;
+        }
+    }
+
+}
